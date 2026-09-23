@@ -3,6 +3,11 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const contactModel = require("../models/contactModel");
 
+router.get("/", (req, res)=>{
+  res.send("Contact route is working")
+})
+
+
 router.post("/", async (req, res) => {
   const { name, email, project, message } = req.body;
 
