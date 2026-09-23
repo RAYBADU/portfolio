@@ -1,3 +1,4 @@
+import React from "react";
 import portfolioImage from "../assets/Portfolio image.png";
 import wincare from "../assets/Wincare.png"
 
