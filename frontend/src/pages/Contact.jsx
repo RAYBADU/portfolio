@@ -13,17 +13,14 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading ,setLoading] = useState(false);
 
-  const apiUrl = import.meta.env.VITE_API_URL || "https://portfolio-shgm.onrender.com";
+  const apiUrl =  "https://portfolio-shgm.onrender.com/contact";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setErrorMessage("");
 
-    // if (message.length > 250) {
-    //   setErrorMessage("Your message characters should not be more than 250 ");
-    //   return;
-    // }
+   
 
    
     try {
