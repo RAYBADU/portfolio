@@ -8,7 +8,7 @@ router.get("/", (req, res)=>{
 })
 
 
-router.post("/contact", async (req, res) => {
+router.post("/", async (req, res) => {
   const { name, email, project, message } = req.body;
 
   try {
