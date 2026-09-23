@@ -7,7 +7,7 @@ const connectDB = require("./db");
 
 server.use(cors())
 server.use(express.json());
-server.use("/", contactRoutes);
+server.use("/contact", contactRoutes);
 
 connectDB();
 const PORT = process.env.PORT;
