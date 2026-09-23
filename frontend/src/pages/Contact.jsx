@@ -19,7 +19,7 @@ const Contact = () => {
 
    
     try {
-      const response = await fetch("http://localhost:5000", {
+      const response = await fetch("https://portfolio-l3r4.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, project, message }),
