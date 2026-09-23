@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { HashLoader } from "react-spinners";
+
+
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -7,10 +10,12 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [loading ,setLoading] = useState(false);
   // const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     // if (message.length > 250) {
     //   setErrorMessage("Your message characters should not be more than 250 ");
@@ -40,8 +45,10 @@ const Contact = () => {
       setTimeout(() => {
         setMessageSent(false);
       }, 3000);
+      setLoading(false);
     } catch (error) {
       console.log("Failed to submit", error);
+      setLoading(false);
     }
   };
 
@@ -101,13 +108,7 @@ const Contact = () => {
               </div>
             )}
 
-            {/* Error Message */}
-{/* 
-            {fieldIncludeString && (
-              <div className="bg-red-50 border border-red-300 w-full p-4 text-center rounded-xl mb-8 text-red-500 text-sm md:text-md">
-                {errorMessage}
-              </div>
-            )} */}
+
 
             <div className="grid gap-5 md:grid-cols-2">
               <label className="block text-sm text-slate-700">
@@ -162,12 +163,16 @@ const Contact = () => {
               <p className="text-sm">{message.length} / 250</p>
             </label>
 
-            <div className="mt-6 flex justify-end">
+            <div className="mt-6 flex justify-end ">
               <button
                 type="submit"
-                className="rounded-lg bg-slate-900 px-5 py-3 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer"
+                disabled={loading}
+                className="rounded-lg bg-slate-900 px-5 py-3 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send message
+             {loading ? 
+              <HashLoader color="white" size={18}/> : ("Send message"
+             )}
+
               </button>
             </div>
           </form>

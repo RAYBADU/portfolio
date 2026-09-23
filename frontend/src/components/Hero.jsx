@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import Raymond from "../assets/Raymond.jpg";
 
+
 const Hero = () => {
   return (
     <main className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 px-6 py-15 md:flex-row lg:py-28">
@@ -52,6 +53,9 @@ const Hero = () => {
           />
         </div>
       </div>
+
+
+
     </main>
   );
 };
