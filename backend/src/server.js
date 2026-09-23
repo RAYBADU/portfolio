@@ -5,7 +5,18 @@ require("dotenv").config();
 const contactRoutes = require("../routes/contactRoutes");
 const connectDB = require("./db");
 
-server.use(cors())
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://frontend-five-tau-62.vercel.app",
+];
+
+server.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 server.use(express.json());
 server.use("/contact", contactRoutes);
 
