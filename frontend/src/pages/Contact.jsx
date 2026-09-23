@@ -165,7 +165,7 @@ const Contact = () => {
             <div className="mt-6 flex justify-end">
               <button
                 type="submit"
-                className="rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer"
+                className="rounded-lg bg-slate-900 px-5 py-3 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 cursor-pointer"
               >
                 Send message
               </button>

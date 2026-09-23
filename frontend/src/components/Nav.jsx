@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaBars, FaTimes, FaCode } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import {FiCode} from "react-icons/fi"
 import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
@@ -18,11 +19,12 @@ const Nav = () => {
       <nav className="relative mx-auto flex w-full items-center justify-between border border-[#e9ddcf] bg-[#f7f3ee]/90 px-5 py-3 shadow-[0_10px_25px_rgba(15,23,42,0.04)] backdrop-blur-sm">
         <Link
           to="/"
-          className="text-lg font-semibold tracking-[0.35rem] text-slate-900"
+          className="text-lg font-semibold tracking-[0.35rem] text-slate-900 flex items-center"
         >
-          RAYMOND
-          <span className="inline-block ">
-            <FaCode size={20} />
+          <p>RAYMOND</p>
+          
+          <span className="">
+            <FiCode size={26} />
           </span>
         </Link>
 
@@ -46,10 +48,10 @@ const Nav = () => {
 
         <Link
           to="/contact"
-          className="hidden rounded-full border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 md:block"
+          className="hidden rounded-lg border border-slate-900 bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 md:block"
         >
           Let&apos;s talk
-        </Link>
+        </Link>  
 
         <button
           type="button"

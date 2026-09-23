@@ -8,9 +8,7 @@ const Hero = () => {
     <main className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-12 px-6 py-15 md:flex-row lg:py-28">
       {/* Text Content */}
       <section className="max-w-xl text-center lg:text-left">
-        <p className="mb-6 inline-flex items-center rounded-full border border-[#e7d2b8] bg-[#f6eee7] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-[#7b4d2a]">
-          based in ghana • available for hire
-        </p>
+        
 
         <h1 className="text-5xl font-semibold tracking-[-0.06em] text-slate-900 md:text-7xl">
           Hello, I'm Raymond
@@ -29,7 +27,7 @@ const Hero = () => {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 rounded-full bg-[#1f2937] px-5 py-3 text-sm font-medium text-white shadow-[0_20px_30px_rgba(31,41,55,0.18)] transition-transform duration-200 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#1f2937] px-5 py-3 text-sm font-medium text-white shadow-[0_20px_30px_rgba(31,41,55,0.18)] transition-transform duration-200 hover:-translate-y-0.5"
           >
             View projects
             <FiArrowRight size={16} />
@@ -37,7 +35,7 @@ const Hero = () => {
 
           <Link
             to="/contact"
-            className="inline-flex items-center rounded-full border border-[#d8c7b6] bg-white/60 px-5 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:border-[#b98a60] hover:text-slate-900"
+            className="inline-flex items-center rounded-lg border border-[#d8c7b6] bg-white/60 px-5 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:border-[#b98a60] hover:text-slate-900"
           >
             Let&apos;s talk
           </Link>
