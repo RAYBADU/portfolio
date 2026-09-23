@@ -23,8 +23,8 @@ router.post("/", async (req, res) => {
       .status(201)
       .json({ message: "Your message has been sent successfully" });
   } catch (error) {
-    res.status(400).json({ message: "Failed to submit" });
-    console.log("Failed to submit", error);
+    console.error("Failed to save contact message", error);
+    res.status(500).json({ message: "Failed to save your message" });
   }
 });
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HashLoader } from "react-spinners";
 
 
@@ -10,12 +10,15 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [messageSent, setMessageSent] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading ,setLoading] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState("");
+
+  const apiUrl = import.meta.env.VITE_API_URL || "https://portfolio-l3r4.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage("");
 
     // if (message.length > 250) {
     //   setErrorMessage("Your message characters should not be more than 250 ");
@@ -24,13 +27,16 @@ const Contact = () => {
 
    
     try {
-      const response = await fetch("https://portfolio-l3r4.onrender.com", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, project, message }),
       });
       const data = await response.json();
-      console.log(data);
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to submit your message");
+      }
 
       setName("");
       setEmail("");
@@ -48,6 +54,7 @@ const Contact = () => {
       setLoading(false);
     } catch (error) {
       console.log("Failed to submit", error);
+      setErrorMessage(error.message || "Failed to submit your message");
       setLoading(false);
     }
   };
@@ -105,6 +112,12 @@ const Contact = () => {
             {messageSent && (
               <div className="bg-green-50 border border-green-300 w-full p-4 text-center rounded-xl mb-8 text-green-500 text-sm md:text-md">
                 <p>{successMessage}</p>
+              </div>
+            )}
+
+            {errorMessage && (
+              <div className="mb-8 w-full rounded-xl border border-red-300 bg-red-50 p-4 text-center text-sm text-red-600">
+                <p>{errorMessage}</p>
               </div>
             )}
 
