@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
       project,
       message,
     });
+    console.log("Saved to database : ", contact)
     res
       .status(201)
       .json({ message: "Your message has been sent successfully" });
