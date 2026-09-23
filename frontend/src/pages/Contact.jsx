@@ -13,7 +13,7 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading ,setLoading] = useState(false);
 
-  const apiUrl = import.meta.env.VITE_API_URL || "https://portfolio-l3r4.onrender.com";
+  const apiUrl = import.meta.env.VITE_API_URL || "https://portfolio-shgm.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
